@@ -81,7 +81,7 @@
                 <h2 class="text-4xl font-bold text-center text-white mb-12">About Me</h2>
                 <div class="max-w-3xl mx-auto text-lg text-center leading-relaxed">
                     <p class="mb-6">
-                        I'm a passionate developer with a love for creating lasting solutions. My journey in tech started with a simple "Hello, World!" and has since grown into a being a development manager for a big tech firm.
+                        I'm a developer with a drive for creating lasting solutions. My journey in tech started with a simple "Hello, World!" and has since grown into a being a development manager for a tech firm.
                     </p>
                     <p>
                         When I'm not coding, you can find me outside.
@@ -100,7 +100,7 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center text-white mb-12">My Projects</h2>
                 <p class="text-center text-lg mb-8 max-w-2xl mx-auto">
-                    Here are some of the public projects I've worked on. This section is automatically updated from my GitHub profile.
+                    Here are some of the public projects I've worked on.
                 </p>
                 <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
@@ -224,27 +224,15 @@
                     // Populate skills from repo languages
                     const skillColors = ['bg-cyan-500', 'bg-blue-500', 'bg-green-500', 'bg-yellow-500', 'bg-purple-500', 'bg-pink-500'];
                     let colorIndex = 0;
-                    uniqueLanguages.forEach(lang => {
-                        const skillTag = `
+                    ['JavaScript', 'TypeScript', 'HTML', 'CSS', 'React', 'Angular', 'React Native', 'Laravel'].forEach(skill => {
+                         const skillTag = `
                             <span class="skill-tag text-white text-sm font-medium px-4 py-2 rounded-full ${skillColors[colorIndex % skillColors.length]}">
-                                ${lang}
+                                ${skill}
                             </span>
                         `;
                         skillsContainer.innerHTML += skillTag;
                         colorIndex++;
                     });
-
-                    if(uniqueLanguages.size === 0) {
-                        ['JavaScript', 'HTML', 'CSS'].forEach(skill => {
-                             const skillTag = `
-                                <span class="skill-tag text-white text-sm font-medium px-4 py-2 rounded-full ${skillColors[colorIndex % skillColors.length]}">
-                                    ${skill}
-                                </span>
-                            `;
-                            skillsContainer.innerHTML += skillTag;
-                            colorIndex++;
-                        });
-                    }
 
                 })
                 .catch(error => {
